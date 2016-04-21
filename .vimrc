@@ -1,41 +1,56 @@
-" プラグインが実際にインストールされるディレクトリ
-let s:dein_dir = expand('~/.cache/dein')
-" dein.vim 本体
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+" Note: Skip initialization for vim-tiny or vim-small.
+if 0 | endif
 
-" dein.vim がなければ github から落としてくる
-if &runtimepath !~# '/dein.vim'
-  if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+filetype off
+
+if has('vim_starting')
+  if &compatible
+    set nocompatible               " Be iMproved
   endif
-  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+
+  set runtimepath+=~/.vim/bundle/neobundle.vim
 endif
 
-" 設定開始
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
+call neobundle#begin(expand('~/.vim/bundle/'))
 
-  " プラグインリストを収めた TOML ファイル
-  "let s:toml = g:rc_dir . '/dein.toml'
-  "let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
-  let s:toml      = '~/.vim/rc/dein.toml'
-  let s:lazy_toml = '~/.vim/rc/dein_lazy.toml'
+" originalrepos on github
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/vimproc', {
+  \ 'build' : {
+    \ 'windows' : 'make -f make_mingw32.mak',
+    \ 'cygwin' : 'make -f make_cygwin.mak',
+    \ 'mac' : 'make -f make_mac.mak',
+    \ 'unix' : 'make -f make_unix.mak',
+  \ },
+  \ }
+NeoBundle 'VimClojure'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'jpalardy/vim-slime'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'Shougo/vimfiler.vim'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 't9md/vim-textmanip'
 
-  " TOML を読み込み、キャッシュしておく
-  call dein#load_toml(s:toml,      {'lazy': 0})
-  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'tomasr/molokai'
 
-  " 設定終了
-  call dein#end()
-  call dein#save_state()
-endif
 
-" もし、未インストールものものがあったらインストール
-if dein#check_install()
-  call dein#install()
-endif
+""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 
-set number
+call neobundle#end()
+
+filetype plugin indent on     " required!
+filetype indent on
+syntax on
+
+NeoBundleCheck
+
+" deleteを有効
+set backspace=indent,eol,start
 set paste
 " TABキーを押した際にタブ文字の代わりにスペースを入れる
 set expandtab
