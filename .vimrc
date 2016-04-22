@@ -59,6 +59,8 @@ set shiftwidth=2
 "タブ、空白、改行の可視化
 set list
 set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
+"改行時に前の行のインデントを継続する
+set autoindent
 
 "全角スペースをハイライト表示
 function! ZenkakuSpace()
