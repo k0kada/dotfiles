@@ -61,6 +61,9 @@ set list
 set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
 "改行時に前の行のインデントを継続する
 set autoindent
+" マウスホイールを使用
+set mouse=a
+set ttymouse=xterm2
 
 "全角スペースをハイライト表示
 function! ZenkakuSpace()
