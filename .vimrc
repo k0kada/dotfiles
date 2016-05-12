@@ -39,6 +39,12 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'tomasr/molokai'
 
+""phpdoc
+NeoBundle 'PDV--phpDocumentor-for-Vim'
+noremap <C-P> <Esc>:call PhpDocSingle()<CR>i
+nnoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocSingle()<CR>
+
 
 ""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 
