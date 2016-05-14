@@ -38,14 +38,7 @@ NeoBundle 't9md/vim-textmanip'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'tomasr/molokai'
-
-""phpdoc
 NeoBundle 'PDV--phpDocumentor-for-Vim'
-noremap <C-P> <Esc>:call PhpDocSingle()<CR>i
-nnoremap <C-P> :call PhpDocSingle()<CR>
-vnoremap <C-P> :call PhpDocSingle()<CR>
-
-
 ""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 
 call neobundle#end()
@@ -55,6 +48,11 @@ filetype indent on
 syntax on
 
 NeoBundleCheck
+
+""phpdoc
+noremap <C-P> <Esc>:call PhpDocSingle()<CR>i
+nnoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocSingle()<CR>
 
 " deleteを有効
 set backspace=indent,eol,start

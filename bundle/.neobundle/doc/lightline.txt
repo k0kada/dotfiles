@@ -4,7 +4,7 @@ Version: 0.0
 Author: itchyny (https://github.com/itchyny)
 License: MIT License
 Repository: https://github.com/itchyny/lightline.vim
-Last Change: 2016/04/15 22:26:52.
+Last Change: 2016/05/08 13:56:19.
 
 CONTENTS					*lightline-contents*
 
@@ -109,7 +109,7 @@ OPTIONS						*lightline-option*
 		    \ 'filetype': '%{&ft!=#""?&ft:"no ft"}',
 		    \ 'percent': '%3p%%',
 		    \ 'percentwin': '%P',
-		    \ 'spell': '%{&spell?&spelllang:"no spell"}',
+		    \ 'spell': '%{&spell?&spelllang:""}',
 		    \ 'lineinfo': '%3l:%-2v',
 		    \ 'line': '%l',
 		    \ 'column': '%c'
@@ -124,7 +124,8 @@ OPTIONS						*lightline-option*
 		let g:lightline.component_visible_condition = {
 		    \ 'modified': '&modified||!&modifiable',
 		    \ 'readonly': '&readonly',
-		    \ 'paste': '&paste' }
+		    \ 'paste': '&paste',
+		    \ 'spell': '&spell' }
 <
 		Users are recommended to set this option together with the
 		component itself.
@@ -223,7 +224,7 @@ OPTIONS						*lightline-option*
 		    \ 'S' : 'S-LINE',
 		    \ "\<C-s>": 'S-BLOCK',
 		    \ 't': 'TERMINAL',
-		    \ '?': '' }
+		    \ }
 <
 		When you search a word, you get into the command mode. But if
 		you want to keep the mode indicator as 'NORMAL', add >
@@ -286,7 +287,7 @@ nice.
 	function! LightLineFugitive()
 		if exists('*fugitive#head')
 			let _ = fugitive#head()
-			return strlen(_) ? ''._ : ''
+			return _ !=# '' ? ''._ : ''
 		endif
 		return ''
 	endfunction
@@ -311,7 +312,7 @@ look nice.
 	function! LightLineFugitive()
 		if exists('*fugitive#head')
 			let _ = fugitive#head()
-			return strlen(_) ? '⭠ '._ : ''
+			return _ !=# '' ? '⭠ '._ : ''
 		endif
 		return ''
 	endfunction
@@ -741,7 +742,7 @@ A nice example for |vim-powerline| font users:
 	function! LightLineFugitive()
 		if &ft !~? 'vimfiler' && exists('*fugitive#head')
 			let _ = fugitive#head()
-			return strlen(_) ? '⭠ '._ : ''
+			return _ !=# '' ? '⭠ '._ : ''
 		endif
 		return ''
 	endfunction
@@ -802,7 +803,7 @@ For users who uses lots of plugins:
 	    if expand('%:t') !~? 'Tagbar\|Gundo\|NERD' && &ft !~? 'vimfiler' && exists('*fugitive#head')
 	      let mark = ''  " edit here for cool mark
 	      let _ = fugitive#head()
-	      return strlen(_) ? mark._ : ''
+	      return _ !=# '' ? mark._ : ''
 	    endif
 	  catch
 	  endtry
@@ -814,11 +815,11 @@ For users who uses lots of plugins:
 	endfunction
 
 	function! LightLineFiletype()
-	  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+	  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 	endfunction
 
 	function! LightLineFileencoding()
-	  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+	  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
 	endfunction
 
 	function! LightLineMode()
