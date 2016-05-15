@@ -56,7 +56,6 @@ vnoremap <C-P> :call PhpDocSingle()<CR>
 
 " deleteを有効
 set backspace=indent,eol,start
-set paste
 " TABキーを押した際にタブ文字の代わりにスペースを入れる
 set expandtab
 set tabstop=2
@@ -66,6 +65,8 @@ set list
 set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
 "改行時に前の行のインデントを継続する
 set autoindent
+" 貼り付けでインデントしない
+set paste
 " マウスホイールを使用
 set mouse=a
 set ttymouse=xterm2
