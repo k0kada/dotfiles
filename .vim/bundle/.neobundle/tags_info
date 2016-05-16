@@ -9,6 +9,7 @@ neosnippet-snippets
 syntastic
 unite-colorscheme
 unite.vim
+vim-bracketed-paste
 vim-slime
 vim-textmanip
 vimfiler.vim

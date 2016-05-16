@@ -42,6 +42,8 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'PDV--phpDocumentor-for-Vim'
 ""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
+"インデント設定
+NeoBundle 'ConradIrwin/vim-bracketed-paste'
 
 call neobundle#end()
 
@@ -65,10 +67,6 @@ set shiftwidth=2
 "タブ、空白、改行の可視化
 set list
 set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
-"改行時に前の行のインデントを継続する
-set autoindent
-" 貼り付けでインデントしない
-set paste
 " マウスホイールを使用
 set mouse=a
 set ttymouse=xterm2
