@@ -8,10 +8,10 @@ if has('vim_starting')
     set nocompatible               " Be iMproved
   endif
 
-  set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -68,7 +68,7 @@ set shiftwidth=2
 set list
 set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
 " マウスホイールを使用
-set mouse=a
+set mouse=iv
 set ttymouse=xterm2
 
 "全角スペースをハイライト表示
