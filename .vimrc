@@ -39,7 +39,8 @@ NeoBundle 't9md/vim-textmanip'
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'tomasr/molokai'
+"カラースキーマ
+NeoBundle 'sjl/badwolf'
 NeoBundle 'PDV--phpDocumentor-for-Vim'
 ""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 "インデント設定
@@ -49,6 +50,8 @@ call neobundle#end()
 
 filetype plugin indent on     " required!
 filetype indent on
+"色指定
+colorscheme badwolf
 syntax on
 
 NeoBundleCheck
