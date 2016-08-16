@@ -45,6 +45,10 @@ NeoBundle 'PDV--phpDocumentor-for-Vim'
 ""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 "インデント設定
 NeoBundle 'ConradIrwin/vim-bracketed-paste'
+"オートセーブ
+NeoBundle 'vim-scripts/vim-auto-save'
+" デフォルトで有効にする
+let g:auto_save = 1
 
 call neobundle#end()
 
