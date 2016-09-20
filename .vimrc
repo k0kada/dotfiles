@@ -47,6 +47,8 @@ NeoBundle 'PDV--phpDocumentor-for-Vim'
 NeoBundle 'ConradIrwin/vim-bracketed-paste'
 "オートセーブ
 NeoBundle 'vim-scripts/vim-auto-save'
+"editorConfig
+NeoBundle 'editorconfig/editorconfig-vim'
 " デフォルトで有効にする
 let g:auto_save = 1
 
@@ -77,6 +79,9 @@ set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
 " マウスホイールを使用
 set mouse=iv
 set ttymouse=xterm2
+
+"Ctags
+set tags+=.git/tags
 
 "全角スペースをハイライト表示
 function! ZenkakuSpace()
