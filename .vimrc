@@ -71,8 +71,8 @@ vnoremap <C-P> :call PhpDocSingle()<CR>
 set backspace=indent,eol,start
 " TABキーを押した際にタブ文字の代わりにスペースを入れる
 set expandtab
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 "タブ、空白、改行の可視化
 set list
 set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
