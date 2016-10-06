@@ -69,8 +69,13 @@ vnoremap <C-P> :call PhpDocSingle()<CR>
 
 " deleteを有効
 set backspace=indent,eol,start
+
+" ファイル末尾に改行を自動挿入するのを無効にする
+set binary noeol
+
 " TABキーを押した際にタブ文字の代わりにスペースを入れる
-set expandtab
+" set expandtab
+set noexpandtab
 set tabstop=4
 set shiftwidth=4
 "タブ、空白、改行の可視化
@@ -81,7 +86,8 @@ set mouse=iv
 set ttymouse=xterm2
 
 "Ctags
-set tags+=.git/tags
+" set tags+=.git/tags;
+set tags+=./tags;
 
 "全角スペースをハイライト表示
 function! ZenkakuSpace()
