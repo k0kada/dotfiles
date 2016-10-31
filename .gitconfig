@@ -1,13 +1,16 @@
 [user]
-	email = koh.okada@gmail.com
-	name = Koh Okada
+    email = koh.okada@gmail.com
+    name = Koh Okada
 [alias]
     tr = log --graph --all --decorate --abbrev-commit --branches --date=short --pretty=format:\"%C(red)%h%C(reset) %C(green)[%ad]%C(reset) %s %C(cyan)@%an%C(reset) %C(yellow)%d%C(reset)\"
     st = status
     ch = checkout
+    sl = stash list
+    ss = stash save
+    fe = fetch -p
 [core]
-	editor = /usr/bin/vim
+    editor = /usr/bin/vim
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+    diff = auto
+    status = auto
+    branch = auto

@@ -75,6 +75,7 @@ set binary noeol
 
 " TABキーを押した際にタブ文字の代わりにスペースを入れる
 " set expandtab
+nnoremap s<C-E> :set expandtab<CR>
 set noexpandtab
 set tabstop=4
 set shiftwidth=4
@@ -85,9 +86,24 @@ set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
 set mouse=iv
 set ttymouse=xterm2
 
+" ヤンク可能行
+set viminfo='50,\"3000,:0,n~/.viminfo
+" コマンドライン履歴
+set history=10000
+
 "Ctags
-" set tags+=.git/tags;
 set tags+=./tags;
+" タグジャンプ候補もだす
+nnoremap <C-]> g<C-]>
+
+"----------------------------------------------------------
+" lightline.vimの設定
+"----------------------------------------------------------
+set laststatus=2 " ステータスラインを常に表示
+set showmode " 現在のモードを表示
+set showcmd " 打ったコマンドをステータスラインの下に表示
+set ruler " ステータスラインの右側にカーソルの位置を表示する
+
 
 "全角スペースをハイライト表示
 function! ZenkakuSpace()
