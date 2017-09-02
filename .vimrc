@@ -25,42 +25,22 @@ NeoBundle 'Shougo/vimproc', {
     \ 'unix' : 'make -f make_unix.mak',
   \ },
   \ }
-NeoBundle 'VimClojure'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'jpalardy/vim-slime'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 't9md/vim-textmanip'
-
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'ujihisa/unite-colorscheme'
-"カラースキーマ
-NeoBundle 'sjl/badwolf'
+NeoBundle 'itchyny/lightline.vim' " 情報を下部ラインに表示
+NeoBundle 'ujihisa/unite-colorscheme' "カラースキーマ
+NeoBundle 'tomasr/molokai'
 NeoBundle 'PDV--phpDocumentor-for-Vim'
-""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
-"インデント設定
-NeoBundle 'ConradIrwin/vim-bracketed-paste'
-"オートセーブ
-NeoBundle 'vim-scripts/vim-auto-save'
-"editorConfig
-NeoBundle 'editorconfig/editorconfig-vim'
-" デフォルトで有効にする
-let g:auto_save = 1
+NeoBundle 'vim-scripts/vim-auto-save' " オートセーブ
+" NeoBundle 'editorconfig/editorconfig-vim'
 
 call neobundle#end()
+NeoBundleCheck
 
-filetype plugin indent on     " required!
-filetype indent on
+let g:auto_save = 1 " オートセーブ有効
+
 "色指定
-colorscheme badwolf
+colorscheme molokai
 syntax on
 
-NeoBundleCheck
 
 ""phpdoc
 noremap <C-P> <Esc>:call PhpDocSingle()<CR>i
@@ -70,40 +50,26 @@ vnoremap <C-P> :call PhpDocSingle()<CR>
 " deleteを有効
 set backspace=indent,eol,start
 
-" ファイル末尾に改行を自動挿入するのを無効にする
-set binary noeol
-
-" TABキーを押した際にタブ文字の代わりにスペースを入れる
-" set expandtab
-nnoremap s<C-E> :set expandtab<CR>
 set noexpandtab
 set tabstop=4
 set shiftwidth=4
 "タブ、空白、改行の可視化
 set list
 set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
-" マウスホイールを使用
-set mouse=iv
-set ttymouse=xterm2
-
-" ヤンク可能行
-set viminfo='50,\"3000,:0,n~/.viminfo
 " コマンドライン履歴
 set history=10000
-
 "Ctags
 set tags+=./tags;
 " タグジャンプ候補もだす
 nnoremap <C-]> g<C-]>
 
-"----------------------------------------------------------
-" lightline.vimの設定
-"----------------------------------------------------------
+" ----------------------------------------------------------
+"  lightline.vimの設定
+" ----------------------------------------------------------
 set laststatus=2 " ステータスラインを常に表示
 set showmode " 現在のモードを表示
 set showcmd " 打ったコマンドをステータスラインの下に表示
 set ruler " ステータスラインの右側にカーソルの位置を表示する
-
 
 "全角スペースをハイライト表示
 function! ZenkakuSpace()
