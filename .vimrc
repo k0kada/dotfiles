@@ -30,10 +30,15 @@ NeoBundle 'ujihisa/unite-colorscheme' "カラースキーマ
 NeoBundle 'tomasr/molokai'
 NeoBundle 'PDV--phpDocumentor-for-Vim'
 NeoBundle 'vim-scripts/vim-auto-save' " オートセーブ
-" NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'rhysd/committia.vim' " コミットメッセージ
 
+filetype plugin indent on
 call neobundle#end()
 NeoBundleCheck
+
+
+" F3でtig blame
+nnoremap <F3> :silent! !tig blame +<C-r>=line('.')<CR> %<CR>:redraw!<CR>
 
 let g:auto_save = 1 " オートセーブ有効
 
@@ -62,6 +67,9 @@ set history=10000
 set tags+=./tags;
 " タグジャンプ候補もだす
 nnoremap <C-]> g<C-]>
+
+" 閉じ括弧のインデントを合わせてくれる
+filetype indent on
 
 " ----------------------------------------------------------
 "  lightline.vimの設定
