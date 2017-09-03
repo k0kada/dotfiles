@@ -74,7 +74,9 @@ set tags+=./tags;
 nnoremap <C-]> g<C-]>
 
 " 閉じ括弧のインデントを合わせてくれる
-filetype indent on
+" filetype indent on
+" 改行時コメントがつかないようにする
+autocmd FileType * setlocal formatoptions-=ro
 
 " 文字列検索
 set incsearch " インクリメンタルサーチ. １文字入力毎に検索を行う
