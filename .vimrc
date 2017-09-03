@@ -55,7 +55,7 @@ vnoremap <C-P> :call PhpDocSingle()<CR>
 " deleteを有効
 set backspace=indent,eol,start
 
-set noexpandtab
+set expandtab
 set tabstop=4
 set shiftwidth=4
 "タブ、空白、改行の可視化
