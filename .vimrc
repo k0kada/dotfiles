@@ -25,6 +25,11 @@ NeoBundle 'Shougo/vimproc', {
     \ 'unix' : 'make -f make_unix.mak',
   \ },
   \ }
+
+NeoBundle 'ctrlpvim/ctrlp.vim' " 多機能セレクタ
+NeoBundle 'tacahiroy/ctrlp-funky' " CtrlPの拡張プラグイン. 関数検索
+NeoBundle 'suy/vim-ctrlp-commandline' " CtrlPの拡張プラグイン. コマンド履歴検索
+
 NeoBundle 'itchyny/lightline.vim' " 情報を下部ラインに表示
 NeoBundle 'ujihisa/unite-colorscheme' "カラースキーマ
 NeoBundle 'tomasr/molokai'
@@ -71,6 +76,14 @@ nnoremap <C-]> g<C-]>
 " 閉じ括弧のインデントを合わせてくれる
 filetype indent on
 
+" 文字列検索
+set incsearch " インクリメンタルサーチ. １文字入力毎に検索を行う
+set ignorecase " 検索パターンに大文字小文字を区別しない
+set smartcase " 検索パターンに大文字を含んでいたら大文字小文字を区別する
+set hlsearch " 検索結果をハイライト
+" ESCキー2度押しでハイライトの切り替え
+nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
+
 " ----------------------------------------------------------
 "  lightline.vimの設定
 " ----------------------------------------------------------
@@ -92,3 +105,25 @@ if has('syntax')
     augroup END
     call ZenkakuSpace()
 endif
+
+
+"----------------------------------------------------------
+"" CtrlPの設定
+"----------------------------------------------------------
+""CtrlPの起動 Ctrl+P
+"M
+""検索モードの切り替え        Ctrl+F
+""下方向のカーソル移動        Ctrl+J
+""上方向のカーソル移動        Ctrl+K
+""検索結果の選択（バッファ）  Enter
+""検索結果の選択（水平分割）  Ctrl+X
+""CtrlPの終了                 Esc
+let g:ctrlp_match_window = 'order:ttb,min:20,max:20,results:100' "マッチウインドウの設定. 「下部に表示, 大きさ20行で固定, 検索結果100件」
+let g:ctrlp_show_hidden = 1 " .(ドット)から始まるファイルも検索対象にする
+let g:ctrlp_types = ['fil'] "ファイル検索のみ使用
+let g:ctrlp_extensions = ['funky', 'commandline'] "CtrlPの拡張として「funky」と「commandline」を使用
+
+" CtrlPCommandLineの有効化
+command! CtrlPCommandLine call ctrlp#init(ctrlp#commandline#id())
+" CtrlPFunkyの有効化
+let g:ctrlp_funky_matchtype = 'path'
