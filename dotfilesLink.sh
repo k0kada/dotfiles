@@ -15,3 +15,4 @@ ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

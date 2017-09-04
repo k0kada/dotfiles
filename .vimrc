@@ -36,26 +36,25 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'PDV--phpDocumentor-for-Vim'
 NeoBundle 'vim-scripts/vim-auto-save' " オートセーブ
 NeoBundle 'rhysd/committia.vim' " コミットメッセージ
+NeoBundle 'tpope/vim-fugitive'
+
 
 filetype plugin indent on
 call neobundle#end()
 NeoBundleCheck
-
-
-" F3でtig blame
-nnoremap <F3> :silent! !tig blame +<C-r>=line('.')<CR> %<CR>:redraw!<CR>
 
 let g:auto_save = 1 " オートセーブ有効
 
 "色指定
 colorscheme molokai
 syntax on
-
+" volt色付け
+set filetype=htmldjango
 
 ""phpdoc
-noremap <C-P> <Esc>:call PhpDocSingle()<CR>i
-nnoremap <C-P> :call PhpDocSingle()<CR>
-vnoremap <C-P> :call PhpDocSingle()<CR>
+noremap <F4> <Esc>:call PhpDocSingle()<CR>i
+nnoremap <F4> :call PhpDocSingle()<CR>
+vnoremap <F4> :call PhpDocSingle()<CR>
 
 " deleteを有効
 set backspace=indent,eol,start
@@ -73,6 +72,7 @@ set tags+=./tags;
 " タグジャンプ候補もだす
 nnoremap <C-]> g<C-]>
 
+
 " 閉じ括弧のインデントを合わせてくれる
 " filetype indent on
 " 改行時コメントがつかないようにする
@@ -84,7 +84,8 @@ set ignorecase " 検索パターンに大文字小文字を区別しない
 set smartcase " 検索パターンに大文字を含んでいたら大文字小文字を区別する
 set hlsearch " 検索結果をハイライト
 " ESCキー2度押しでハイライトの切り替え
-nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
+nnoremap<F3> :nohlsearch<Esc>
+
 
 " ----------------------------------------------------------
 "  lightline.vimの設定
