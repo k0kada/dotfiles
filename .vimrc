@@ -17,14 +17,14 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " originalrepos on github
-NeoBundle 'Shougo/vimproc', {
-  \ 'build' : {
-    \ 'windows' : 'make -f make_mingw32.mak',
-    \ 'cygwin' : 'make -f make_cygwin.mak',
-    \ 'mac' : 'make -f make_mac.mak',
-    \ 'unix' : 'make -f make_unix.mak',
-  \ },
-  \ }
+" NeoBundle 'Shougo/vimproc', {
+"   \ 'build' : {
+"     \ 'windows' : 'make -f make_mingw32.mak',
+"     \ 'cygwin' : 'make -f make_cygwin.mak',
+"     \ 'mac' : 'make -f make_mac.mak',
+"     \ 'unix' : 'make -f make_unix.mak',
+"   \ },
+"   \ }
 
 NeoBundle 'ctrlpvim/ctrlp.vim' " 多機能セレクタ
 NeoBundle 'tacahiroy/ctrlp-funky' " CtrlPの拡張プラグイン. 関数検索
@@ -37,7 +37,7 @@ NeoBundle 'PDV--phpDocumentor-for-Vim'
 NeoBundle 'vim-scripts/vim-auto-save' " オートセーブ
 NeoBundle 'rhysd/committia.vim' " コミットメッセージ
 NeoBundle 'tpope/vim-fugitive'
-
+NeoBundle 'cocopon/vaffle.vim' " vimファイラー
 
 filetype plugin indent on
 call neobundle#end()
@@ -47,7 +47,8 @@ let g:auto_save = 1 " オートセーブ有効
 
 "色指定
 colorscheme molokai
-syntax on
+hi Comment ctermfg=102
+hi Visual  ctermbg=245
 " volt色付け
 set filetype=htmldjango
 
@@ -72,9 +73,8 @@ set tags+=./tags;
 " タグジャンプ候補もだす
 nnoremap <C-]> g<C-]>
 
-
 " 閉じ括弧のインデントを合わせてくれる
-" filetype indent on
+filetype indent on
 " 改行時コメントがつかないようにする
 autocmd FileType * setlocal formatoptions-=ro
 
@@ -86,6 +86,20 @@ set hlsearch " 検索結果をハイライト
 " ESCキー2度押しでハイライトの切り替え
 nnoremap<F3> :nohlsearch<Esc>
 
+set visualbell " ビープ音を消す
+
+" ----------------------------------------------------------
+" スペルチェック
+" ----------------------------------------------------------
+" :set spell	スペルチェック機能を ON
+" :set nospell	スペルチェック機能を OFF
+" ]s	次のスペルミスの箇所へ移動
+" [s	前のスペルミスの箇所へ移動
+" z=	正しいスペルの候補を表示し、選択した単語でスペルミスを修正
+" zg	カーソル下の単語を正しいスペルとして辞書登録
+" zw	カーソル下の単語を誤ったスペルとして辞書登録
+set spell
+set spelllang=en,cjk
 
 " ----------------------------------------------------------
 "  lightline.vimの設定

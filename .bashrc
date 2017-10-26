@@ -4,7 +4,8 @@ alias vi='vim'
 alias grep='grep --color'
 alias fn='find -name'
 alias hi='history'
-
+# cyginのビープ音をならさない
+echo "set  bell-style none" >> ~/.inputrc
 
 # 履歴を記録するcdの再定義（pushdの利用）
 function cd {

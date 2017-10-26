@@ -8,6 +8,7 @@
     sl = stash list
     ss = stash save
     fe = fetch -p
+    br = branch
 [core]
     editor = /usr/bin/vim
 [color]
