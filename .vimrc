@@ -1,47 +1,43 @@
-" Note: Skip initialization for vim-tiny or vim-small.
-if 0 | endif
+" vimrc に以下のように追記
 
-filetype off
+" プラグインが実際にインストールされるディレクトリ
+let s:dein_dir = expand('~/.cache/dein')
+" dein.vim 本体
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
+" dein.vim がなければ github から落としてくる
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
   endif
-
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+" 設定開始
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
 
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
+  " プラグインリストを収めた TOML ファイル
+  " 予め TOML ファイル（後述）を用意しておく
+  let g:rc_dir    = expand('~/.vim/rc')
+  let s:toml      = g:rc_dir . '/dein.toml'
+  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
 
-" originalrepos on github
-" NeoBundle 'Shougo/vimproc', {
-"   \ 'build' : {
-"     \ 'windows' : 'make -f make_mingw32.mak',
-"     \ 'cygwin' : 'make -f make_cygwin.mak',
-"     \ 'mac' : 'make -f make_mac.mak',
-"     \ 'unix' : 'make -f make_unix.mak',
-"   \ },
-"   \ }
+  " TOML を読み込み、キャッシュしておく
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
-NeoBundle 'ctrlpvim/ctrlp.vim' " 多機能セレクタ
-NeoBundle 'tacahiroy/ctrlp-funky' " CtrlPの拡張プラグイン. 関数検索
-NeoBundle 'suy/vim-ctrlp-commandline' " CtrlPの拡張プラグイン. コマンド履歴検索
+  " 設定終了
+  call dein#end()
+  call dein#save_state()
+endif
 
-NeoBundle 'itchyny/lightline.vim' " 情報を下部ラインに表示
-NeoBundle 'ujihisa/unite-colorscheme' "カラースキーマ
-NeoBundle 'tomasr/molokai'
-NeoBundle 'PDV--phpDocumentor-for-Vim'
-NeoBundle 'vim-scripts/vim-auto-save' " オートセーブ
-NeoBundle 'rhysd/committia.vim' " コミットメッセージ
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'cocopon/vaffle.vim' " vimファイラー
+" もし、未インストールものものがあったらインストール
+if dein#check_install()
+  call dein#install()
+endif
 
 filetype plugin indent on
-call neobundle#end()
-NeoBundleCheck
 
 let g:auto_save = 1 " オートセーブ有効
 
