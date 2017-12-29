@@ -17,14 +17,14 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " originalrepos on github
-NeoBundle 'Shougo/vimproc', {
-  \ 'build' : {
-    \ 'windows' : 'make -f make_mingw32.mak',
-    \ 'cygwin' : 'make -f make_cygwin.mak',
-    \ 'mac' : 'make -f make_mac.mak',
-    \ 'unix' : 'make -f make_unix.mak',
-  \ },
-  \ }
+" NeoBundle 'Shougo/vimproc', {
+"   \ 'build' : {
+"     \ 'windows' : 'make -f make_mingw32.mak',
+"     \ 'cygwin' : 'make -f make_cygwin.mak',
+"     \ 'mac' : 'make -f make_mac.mak',
+"     \ 'unix' : 'make -f make_unix.mak',
+"   \ },
+"   \ }
 
 NeoBundle 'ctrlpvim/ctrlp.vim' " 多機能セレクタ
 NeoBundle 'tacahiroy/ctrlp-funky' " CtrlPの拡張プラグイン. 関数検索
@@ -36,26 +36,27 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'PDV--phpDocumentor-for-Vim'
 NeoBundle 'vim-scripts/vim-auto-save' " オートセーブ
 NeoBundle 'rhysd/committia.vim' " コミットメッセージ
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'cocopon/vaffle.vim' " vimファイラー
 
 filetype plugin indent on
 call neobundle#end()
 NeoBundleCheck
 
-
-" F3でtig blame
-nnoremap <F3> :silent! !tig blame +<C-r>=line('.')<CR> %<CR>:redraw!<CR>
-
 let g:auto_save = 1 " オートセーブ有効
 
+set encoding=utf-8
 "色指定
 colorscheme molokai
-syntax on
-
+hi Comment ctermfg=102
+hi Visual  ctermbg=245
+" volt色付け
+set filetype=htmldjango
 
 ""phpdoc
-noremap <C-P> <Esc>:call PhpDocSingle()<CR>i
-nnoremap <C-P> :call PhpDocSingle()<CR>
-vnoremap <C-P> :call PhpDocSingle()<CR>
+noremap <F4> <Esc>:call PhpDocSingle()<CR>i
+nnoremap <F4> :call PhpDocSingle()<CR>
+vnoremap <F4> :call PhpDocSingle()<CR>
 
 " deleteを有効
 set backspace=indent,eol,start
@@ -74,7 +75,7 @@ set tags+=./tags;
 nnoremap <C-]> g<C-]>
 
 " 閉じ括弧のインデントを合わせてくれる
-" filetype indent on
+filetype indent on
 " 改行時コメントがつかないようにする
 autocmd FileType * setlocal formatoptions-=ro
 
@@ -84,7 +85,22 @@ set ignorecase " 検索パターンに大文字小文字を区別しない
 set smartcase " 検索パターンに大文字を含んでいたら大文字小文字を区別する
 set hlsearch " 検索結果をハイライト
 " ESCキー2度押しでハイライトの切り替え
-nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
+nnoremap<F3> :nohlsearch<Esc>
+
+set visualbell " ビープ音を消す
+
+" ----------------------------------------------------------
+" スペルチェック
+" ----------------------------------------------------------
+" :set spell	スペルチェック機能を ON
+" :set nospell	スペルチェック機能を OFF
+" ]s	次のスペルミスの箇所へ移動
+" [s	前のスペルミスの箇所へ移動
+" z=	正しいスペルの候補を表示し、選択した単語でスペルミスを修正
+" zg	カーソル下の単語を正しいスペルとして辞書登録
+" zw	カーソル下の単語を誤ったスペルとして辞書登録
+set spell
+set spelllang=en,cjk
 
 " ----------------------------------------------------------
 "  lightline.vimの設定
