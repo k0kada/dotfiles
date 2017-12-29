@@ -11,6 +11,8 @@
     br = branch
 [core]
     editor = /usr/bin/vim
+    pager = less -cm
+    quotepath = false
 [color]
     diff = auto
     status = auto

@@ -5,6 +5,7 @@ rm -rf ~/.vim
 rm -rf ~/.vimrc
 rm -rf ~/.gitconfig
 rm -rf ~/.tmux.conf
+rm -rf ~/.tigrc
 
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.bash_profile ~/.bash_profile
@@ -13,6 +14,7 @@ source ~/.bash_profile
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/.tigrc ~/.tigrc
 
 git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
