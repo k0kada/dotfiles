@@ -48,6 +48,7 @@ let g:auto_save = 1 " オートセーブ有効
 set encoding=utf-8
 "色指定
 colorscheme molokai
+syntax on
 hi Comment ctermfg=102
 hi Visual  ctermbg=245
 " volt色付け
