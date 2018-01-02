@@ -11,5 +11,6 @@ if [ "$(uname)" = 'Darwin' ]; then
     if [ -f "$BREW_SCRIPTS/git-prompt.sh" ]; then PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '; fi
 fi
 
-source ~/usr/local/bin/sd_cl
-export PATH=$PATH:~/usr/local/bin
+# source ~/usr/local/bin/sd_cl
+# export PATH=$PATH:~/usr/local/bin
+source /usr/local/etc/sd_cl
