@@ -1,4 +1,9 @@
-" vimrc に以下のように追記
+"dein Scripts-----------------------------
+" https://qiita.com/delphinus/items/00ff2c0ba972c6e41542
+" https://qiita.com/suy0n9/items/2c33b3982530a1666d9c
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
 " プラグインが実際にインストールされるディレクトリ
 let s:dein_dir = expand('~/.cache/dein')
@@ -32,13 +37,15 @@ if dein#load_state(s:dein_dir)
   call dein#save_state()
 endif
 
+filetype plugin indent on
+syntax enable
+
 " もし、未インストールものものがあったらインストール
 if dein#check_install()
   call dein#install()
 endif
 
-filetype plugin indent on
-
+" __________ここから独自
 let g:auto_save = 1 " オートセーブ有効
 
 set encoding=utf-8
