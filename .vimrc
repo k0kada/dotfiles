@@ -77,6 +77,9 @@ set history=10000
 set tags+=./tags;
 " タグジャンプ候補もだす
 nnoremap <C-]> g<C-]>
+" コロンセミコロンの切り替え
+noremap ; :
+noremap : ;
 
 " 閉じ括弧のインデントを合わせてくれる
 filetype indent on
