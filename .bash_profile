@@ -12,5 +12,6 @@ if [ "$(uname)" = 'Darwin' ]; then
 fi
 
 # source ~/usr/local/bin/sd_cl
-# export PATH=$PATH:~/usr/local/bin
-source /usr/local/etc/sd_cl
+export PATH=$PATH:~/bin/sentaku/bin
+export PATH=$PATH:~/bin
+source ~/bin/sd_cl/etc/sd_cl

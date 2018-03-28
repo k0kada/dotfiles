@@ -5,10 +5,11 @@ if [ "$(uname)" = 'Darwin' ]; then
   brew tap rcmdnk/rcmdnkpac
   brew install sd_cl
 else
-  # sd_cl: コマンドラインでのディレクトリ移動を快適にする
-  # https://rcmdnk.com/blog/2016/02/18/computer-bash-zsh/#sd_cl
-  curl -fsSL https://raw.github.com/rcmdnk/sentaku/install/install.sh| sh
-  curl -fsSL https://raw.github.com/rcmdnk/sd_cl/install/install.sh| sh
+#  # sd_cl: コマンドラインでのディレクトリ移動を快適にする
+#  # https://rcmdnk.com/blog/2016/02/18/computer-bash-zsh/#sd_cl
+#  curl -fsSL https://raw.github.com/rcmdnk/sentaku/install/install.sh| sh
+#  curl -fsSL https://raw.github.com/rcmdnk/sd_cl/install/install.sh| sh
+echo 111
 fi
 
 rm -rf ~/.bashrc
