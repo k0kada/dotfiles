@@ -9,7 +9,7 @@ else
 #  # https://rcmdnk.com/blog/2016/02/18/computer-bash-zsh/#sd_cl
 #  curl -fsSL https://raw.github.com/rcmdnk/sentaku/install/install.sh| sh
 #  curl -fsSL https://raw.github.com/rcmdnk/sd_cl/install/install.sh| sh
-echo 111
+  echo not mac
 fi
 
 rm -rf ~/.bashrc

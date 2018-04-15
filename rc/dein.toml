@@ -23,6 +23,8 @@ repo = 'rhysd/committia.vim'
 repo = "tpope/vim-fugitive"
 [[plugins]]
 repo = 'cocopon/vaffle.vim'
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
 
 # git clone 後、実行すべきコマンドがある場合はこんな感じ
 [[plugins]]
