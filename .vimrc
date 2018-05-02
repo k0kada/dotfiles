@@ -57,6 +57,10 @@ hi Visual  ctermbg=245
 " volt色付け
 set filetype=htmldjango
 
+" 削除時yamkしない
+" nnoremap d "_d
+" nnoremap D "_D
+
 ""phpdoc
 noremap <F4> <Esc>:call PhpDocSingle()<CR>i
 nnoremap <F4> :call PhpDocSingle()<CR>
