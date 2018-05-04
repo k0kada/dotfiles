@@ -49,6 +49,9 @@ endif
 let g:auto_save = 1 " オートセーブ有効
 
 set encoding=utf-8
+" yankできる行数を増やす
+set viminfo='20,\"10000
+
 "色指定
 colorscheme molokai
 syntax on

@@ -1,1 +1,2 @@
---exclude={*.js, *.sql}
+--exclude=*.js
+--exclude=*.sql
