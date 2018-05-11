@@ -25,6 +25,8 @@ repo = "tpope/vim-fugitive"
 repo = 'cocopon/vaffle.vim'
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+[[plugins]]
+repo = 'rhysd/ghpr-blame.vim'
 
 # git clone 後、実行すべきコマンドがある場合はこんな感じ
 [[plugins]]
