@@ -58,7 +58,7 @@ syntax on
 hi Comment ctermfg=102
 hi Visual  ctermbg=245
 " volt色付け
-set filetype=htmldjango
+autocmd BufNewFile,BufRead *.volt setfiletype htmldjango
 
 " 削除時yamkしない
 " nnoremap d "_d
@@ -91,7 +91,7 @@ noremap : ;
 " 閉じ括弧のインデントを合わせてくれる
 filetype indent on
 " 改行時コメントがつかないようにする
-autocmd FileType * setlocal formatoptions-=ro
+" autocmd FileType * setlocal formatoptions-=ro
 
 " 文字列検索
 set incsearch " インクリメンタルサーチ. １文字入力毎に検索を行う
@@ -157,3 +157,5 @@ let g:ctrlp_extensions = ['funky', 'commandline'] "CtrlPの拡張として「fun
 command! CtrlPCommandLine call ctrlp#init(ctrlp#commandline#id())
 " CtrlPFunkyの有効化
 let g:ctrlp_funky_matchtype = 'path'
+" .gitignoreに書き込まれたファイルを無視するようになる
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']

@@ -3,6 +3,7 @@ alias vi='vim'
 alias grep='grep --color'
 alias fn='find -name'
 alias hi='history'
+alias gr='echo "->" | grep  -r --color --'
 
 # mac文字化け
 export LESSCHARSET=utf-8
