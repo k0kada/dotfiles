@@ -46,13 +46,21 @@ if dein#check_install()
 endif
 
 " __________ここから独自
-let g:auto_save = 1 " オートセーブ有効
+" vim位置記憶
+augroup vimrcEx
+    au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+                \ exe "normal g`\"" | endif
+augroup END
 
 set encoding=utf-8
 " yankできる行数を増やす
 set viminfo='20,\"10000
 
 "色指定
+" windows terminalの背景色に合わせる
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none
+
 colorscheme molokai
 syntax on
 hi Comment ctermfg=102
