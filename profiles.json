@@ -70,5 +70,5 @@
     // To unbind a default keybinding, set the command to "unbound"
     "keybindings": [],
 
-    "wordDelimiters" : " \\()\"'-:,;<>~!@#$%^&*|+=[]{}~?\u2502",
+    "wordDelimiters" : " \\()\"'-:,;<>!@#$%^&*|+=[]{}?\u2502",
 }
