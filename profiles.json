@@ -66,8 +66,9 @@
             "yellow" : "#c19c00"
         }
     ],
-
     // Add any keybinding overrides to this array.
     // To unbind a default keybinding, set the command to "unbound"
-    "keybindings": []
+    "keybindings": [],
+
+    "wordDelimiters" : " \\()\"'-:,;<>~!@#$%^&*|+=[]{}~?\u2502",
 }
