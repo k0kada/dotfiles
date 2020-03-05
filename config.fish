@@ -2,11 +2,13 @@
 alias vi='vim'
 alias grep='grep --color'
 alias gr='grep --color -n'
-alias grr='echo "->" | grep  -rn --color --'
+# alias grr='echo "->" | grep  -rn --color --'
+alias grr='echo "->" | grep  -rn --color=auto'
 alias fn='find -name'
 alias hi='history'
 alias ll='ls -la --color=auto'
-alias pv='peco | xargs vim'
+alias pv='peco | xargs -o vim'
+alias cpv='cut -f 1 -d ":" | pv'
 
 # mac文字化け
 export LESSCHARSET=utf-8
