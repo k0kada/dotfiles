@@ -14,7 +14,7 @@ repo = 'ujihisa/unite-colorscheme'
 [[plugins]]
 repo = 'tomasr/molokai'
 [[plugins]]
-repo = 'vim-scripts/PDV--phpDocumentor-for-Vim'
+repo = 'Rican7/php-doc-modded'
 [[plugins]]
 repo = 'vim-scripts/vim-auto-save'
 [[plugins]]

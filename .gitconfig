@@ -1,10 +1,11 @@
 [user]
-    email = koh.okada@gmail.com
+    email = okada@bplats.co.jp
     name = Koh Okada
 [alias]
     tr  = log --graph --all --decorate --abbrev-commit --branches --date=short --pretty=format:\"%C(red)%h%C(reset) %C(green)[%ad]%C(reset) %s %C(cyan)@%an%C(reset) %C(yellow)%d%C(reset)\"
     lm  = log --pretty=format:'[%ad] %h %an : %s' --abbrev-commit --merges
     st  = status
+    dn  = diff --name-only
     ch  = checkout
     sl  = stash list
     ss  = stash save
@@ -19,6 +20,8 @@
     ignorecase = false
     preloadindex = true
     fscache = true
+    filemode = false
+	autoCRLF = false
 [color]
     diff = auto
     status = auto

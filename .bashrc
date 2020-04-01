@@ -5,6 +5,7 @@ alias gr='grep --color -n'
 alias grr='echo "->" | grep  -rn --color --'
 alias fn='find -name'
 alias hi='history'
+alias pv='peco | xargs vim'
 
 # mac文字化け
 export LESSCHARSET=utf-8
