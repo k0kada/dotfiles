@@ -8,7 +8,9 @@ alias fn='find -name'
 alias hi='history'
 alias ll='ls -la --color=auto'
 alias pv='peco | xargs -o vim'
+alias fv='fzf | xargs -o vim'
 alias cpv='cut -f 1 -d ":" | pv'
+alias cfv='cut -f 1 -d ":" | fv'
 
 # mac文字化け
 export LESSCHARSET=utf-8
