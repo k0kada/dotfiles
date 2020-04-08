@@ -16,7 +16,7 @@ alias cfv='cut -f 1 -d ":" | fv'
 export LESSCHARSET=utf-8
 export VAGRANT_WSL_WINDOWS_ACCESS_USER= BPDOMAIN\okada
 export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
-export VAGRANT_WSL_WINDOWS_ACCESS_USER_HOME_PATH="/mnt/c/Users/okada/jpne"
+export VAGRANT_WSL_WINDOWS_ACCESS_USER_HOME_PATH="/mnt/c/Users/okada"
 
 function fish_user_key_bindings
   bind \cx\cr peco_recentd
