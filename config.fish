@@ -1,4 +1,7 @@
-# export LANG=ja_JP.utf8
+export LANG=ja_JP.UTF-8
+export LANGUAGE=ja_JP.UTF-8
+export LC_ALL=ja_JP.UTF-8
+
 alias vi='vim'
 alias grep='grep --color'
 alias gr='grep --color -n'
@@ -14,10 +17,11 @@ alias cfv='cut -f 1 -d ":" | fv'
 
 # mac文字化け
 export LESSCHARSET=utf-8
-export VAGRANT_WSL_WINDOWS_ACCESS_USER= BPDOMAIN\okada
+export VAGRANT_WSL_WINDOWS_ACCESS_USER="BPDOMAIN\okada"
 export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
 export VAGRANT_WSL_WINDOWS_ACCESS_USER_HOME_PATH="/mnt/c/Users/okada"
 
-function fish_user_key_bindings
-  bind \cx\cr peco_recentd
-end
+set -U FZF_LEGACY_KEYBINDINGS 0
+set -U FZF_REVERSE_ISEARCH_OPTS "--reverse --height=100%"
+
+alias gitdiff='git difftool --tool=vimdiff --no-prompt'
